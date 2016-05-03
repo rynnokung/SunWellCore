@@ -1,0 +1,11 @@
+-- Fix up the first few Draenei starting zone quests
+
+-- q.10302 (Volatile Mutations)
+UPDATE quest_template SET PrevQuestId = 9371, NextQuestId = 9293, NextQuestIdChain = 9293 WHERE Id = 10302
+
+-- q.9371 (Botanist Taerix)
+UPDATE quest_template SET PrevQuestId = 9409, NextQuestId = 10302, NextQuestIdChain = 10302 WHERE Id = 9371
+
+-- q.9280.9369 (Replenishing the Healing Crystals)
+UPDATE quest_template SET PrevQuestId = 9279, NextQuestId = 9409, NextQuestIdChain = 9409 WHERE Id = 9280
+UPDATE quest_template SET NextQuestId = 9409, NextQuestIdChain = 9409 WHERE Id = 9369
